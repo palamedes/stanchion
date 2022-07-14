@@ -1,24 +1,7 @@
-# README
+# Stanchion
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Stanchion is a "base project" that I use when creating new projects.  
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby        v2.7.6
+Rails       v7.0.3.1
+Formantic   v2.8 - https://fomantic-ui.com/
