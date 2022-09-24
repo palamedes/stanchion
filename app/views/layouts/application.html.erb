@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Stanchion</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title><% if content_for? :title %><%= content_for :title %><% else %>Stanchion<% end %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+
+  <% if File.exists? "app/javascript/views/#{controller_name}/#{action_name}.js" %>
+    <script><%= render(file: "app/javascript/views/#{controller_name}/#{action_name}.js").html_safe %></script>
+  <% end %>
+
+  <% if content_for? :javascript %><script><%= content_for :javascript %></script><% end %>
+</head>
+
+<body class="<%= controller_name %> <%= "#{controller_name}_#{action_name}" %>">
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %>
+</body>
 </html>
