@@ -1,1 +1,2 @@
 web: bundle exec rails s -p 3005
+css: bin/rails tailwindcss:watch

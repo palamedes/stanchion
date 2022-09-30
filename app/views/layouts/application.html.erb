@@ -5,14 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 
+  <%#
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
   <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+  #%>
 
   <% if File.exists? "app/javascript/views/#{controller_name}/#{action_name}.js" %>
     <script><%= render(file: "app/javascript/views/#{controller_name}/#{action_name}.js").html_safe %></script>
@@ -23,8 +26,8 @@
 
 <body class="<%= controller_name %> <%= "#{controller_name}_#{action_name}" %>">
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<p class=""><%= notice %></p>
+<p class=""><%= alert %></p>
 
 <%= yield %>
 </body>
