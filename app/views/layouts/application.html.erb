@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full bg-gray-50">
 <head>
   <title><% if content_for? :title %><%= content_for :title %><% else %>Stanchion<% end %></title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,11 +12,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 
-  <%#
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
-  #%>
-
   <% if File.exists? "app/javascript/views/#{controller_name}/#{action_name}.js" %>
     <script><%= render(file: "app/javascript/views/#{controller_name}/#{action_name}.js").html_safe %></script>
   <% end %>
@@ -24,7 +19,7 @@
   <% if content_for? :javascript %><script><%= content_for :javascript %></script><% end %>
 </head>
 
-<body class="<%= controller_name %> <%= "#{controller_name}_#{action_name}" %>">
+<body class="<%= controller_name %> <%= "#{controller_name}_#{action_name}" %> h-full">
 
 <p class=""><%= notice %></p>
 <p class=""><%= alert %></p>
